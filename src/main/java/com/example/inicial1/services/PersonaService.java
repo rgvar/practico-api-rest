@@ -75,7 +75,8 @@ public class PersonaService implements BaseService<Persona> {
     @Transactional
     public boolean delete(Long id) throws Exception {
         try {
-            if (personaRepository.existsById(id)) {
+            Optional<Persona> personaOptional = personaRepository.findById(id);
+            if (personaOptional.isPresent()) {
                 personaRepository.deleteById(id);
                 return true;
             } else {
