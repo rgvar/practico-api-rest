@@ -3,14 +3,13 @@ package com.example.inicial1.dtos;
 
 import lombok.*;
 
-@AllArgsConstructor
 @NoArgsConstructor
-@Setter
+@AllArgsConstructor
 @Getter
+@Setter
 @ToString
 @Builder
-public class PersonaDto {
+public class LocalidadDto {
     private Long id;
-    private String nombre;
-    private String apellido;
+    private String denominacion;
 }

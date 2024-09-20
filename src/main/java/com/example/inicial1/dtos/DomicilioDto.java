@@ -1,6 +1,5 @@
 package com.example.inicial1.dtos;
 
-
 import lombok.*;
 
 @AllArgsConstructor
@@ -9,8 +8,8 @@ import lombok.*;
 @Getter
 @ToString
 @Builder
-public class PersonaDto {
+public class DomicilioDto {
     private Long id;
-    private String nombre;
-    private String apellido;
+    private String calle;
+    private int numero;
 }
