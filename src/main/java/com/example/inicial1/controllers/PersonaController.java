@@ -39,10 +39,10 @@ public class PersonaController {
     }
 
     @PostMapping("")
-    public ResponseEntity<?> save(@RequestBody Persona entity){
+    public ResponseEntity<?> save(@RequestBody Persona persona){
         try {
             return ResponseEntity.status(HttpStatus.OK)
-                    .body(personaService.save(entity));
+                    .body(personaService.save(persona));
         }
         catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)

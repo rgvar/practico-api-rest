@@ -44,8 +44,7 @@ public class PersonaService implements BaseService<Persona> {
     @Transactional
     public Persona save(Persona entity) throws Exception {
         try {
-            personaRepository.save(entity);
-            return entity;
+            return personaRepository.save(entity);
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

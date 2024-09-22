@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -18,8 +20,13 @@ public class Persona implements Serializable {
     private Long id;
     private String nombre;
     private String apellido;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_domicilio")
     private Domicilio domicilio;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private Set<Libro> libros = new HashSet<>();
 }
 
