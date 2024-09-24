@@ -1,6 +1,7 @@
 package com.example.inicial1.dtos;
 
 
+import com.example.inicial1.entities.Autor;
 import lombok.*;
 
 @AllArgsConstructor
@@ -15,5 +16,5 @@ public class LibroDto {
     private int fecha;
     private String genero;
     private int paginas;
-    private String autor;
+    private Autor autor;
 }

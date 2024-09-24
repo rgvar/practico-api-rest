@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class DomicilioController {
 
     @Autowired
-    DomicilioService domicilioService;
+    private DomicilioService domicilioService;
 
     @GetMapping("")
     public ResponseEntity<?> getAll() {
@@ -56,7 +56,7 @@ public class DomicilioController {
                     .body(domicilioService.update(id, domicilio));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("No se pudo actualizar el domicilio. ");
+                    .body("Error, no se pudo actualizar el domicilio. ");
         }
     }
 
@@ -67,7 +67,7 @@ public class DomicilioController {
                     .body(domicilioService.delete(id));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("No se pudo remover el domicilio. ");
+                    .body("Error, no se pudo remover el domicilio. ");
         }
     }
 
